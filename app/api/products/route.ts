@@ -113,7 +113,7 @@ async function uploadToCloudinary(
   const buffer = Buffer.from(arrayBuffer);
 
   return new Promise((resolve, reject) => {
-    const uploadOptions: Parameters<typeof cloudinary.uploader.upload_stream>[0] = {
+    const uploadOptions = {
       folder: 'construction-catalog',
       // If updating, overwrite the existing asset to keep the same URL
       ...(existingPublicId ? { public_id: existingPublicId, overwrite: true } : {}),
@@ -122,7 +122,7 @@ async function uploadToCloudinary(
       // Automatic quality optimisation
       quality: 'auto',
       fetch_format: 'auto',
-    };
+    } as Parameters<typeof cloudinary.uploader.upload_stream>[0];
 
     const uploadStream = cloudinary.uploader.upload_stream(
       uploadOptions,
