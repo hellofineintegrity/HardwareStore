@@ -1,0 +1,42 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans:       'DM Sans', system-ui, sans-serif;
+    --font-devanagari: 'Tiro Devanagari Hindi', serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  /* Apply Devanagari font to all Marathi-language elements */
+  [lang="mr"],
+  .font-mr {
+    font-family: var(--font-devanagari);
+    line-height: 1.8;
+  }
+}
+
+@layer utilities {
+  /* Skeleton loading shimmer */
+  .skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
+
+  /* Hide scrollbar but keep scroll functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

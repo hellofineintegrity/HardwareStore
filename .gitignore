@@ -1,0 +1,26 @@
+# env files — NEVER commit secrets
+.env.local
+.env*.local
+.env
+
+# Next.js
+.next/
+out/
+
+# Node
+node_modules/
+
+# Build
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
